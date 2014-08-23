@@ -25,5 +25,5 @@ SCM/
 	static
 	templates
 
-# Gentileza del comando tree
-# apt-get install tree
+Gentileza del comando tree
+apt-get install tree
