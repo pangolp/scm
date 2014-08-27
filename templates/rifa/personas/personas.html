@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block titulo %}Rifa: Personas{% endblock titulo %}
+{% block contenido %}
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Apellido, Nombre</th>
+				<th>Telefono</th>
+				<th>Rol</th>
+				<th>Editar</th>
+				<th>Borrar</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for persona in personas %}
+				<tr>
+					<td>{{ persona.usuario.last_name|title }}, {{ persona.usuario.first_name|title }}</td>
+					<td>{{ persona.telefono }}</td>
+					<td>{{ persona.get_rol_display }}</td>
+					<td><img src="{{ STATIC_URL }}img/editar.png"></td>
+					<td><img src="{{ STATIC_URL }}img/borrar.png"></td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+	<a href="{% url 'rifa_persona_agregar' %}"><button type="button" class="btn btn-primary">Agregar Persona</button></a>
+{% endblock contenido %}
