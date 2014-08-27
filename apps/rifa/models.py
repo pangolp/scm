@@ -68,3 +68,6 @@ class Rifa(models.MODEL):
 	creador = models.ForeignKey(User, editable=False, verbose_name='creador')
 	cobrador = models.ForeignKey(Persona, editable=False, verbose_name='cobrador')
 	comprador = models.ForeignKey(Comprador, verbose_name='comprador')
+
+	def __unicode__(self):
+		return '%d %d' % (self.numero_uno, self.numero_dos)
